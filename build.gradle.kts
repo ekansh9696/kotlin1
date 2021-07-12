@@ -13,7 +13,9 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
-    testImplementation 'io.kotest:kotest-runner-junit5:$version'
+    testImplementation("io.kotest:kotest-runner-junit5:4.6.0")
+    testImplementation("io.kotest:kotest-assertions-core:4.6.0")
+    testImplementation("io.kotest:kotest-runner-console-jvm:4.1.3.2")
 }
 
 tasks.test {
