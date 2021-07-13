@@ -1,15 +1,19 @@
 
 class FizzBuzz
 {
-    fun check(number: Int): String {
+    fun checkFizzBuzz(number: Int): String {
         var res = ""
         res += checkFizz(number) + checkBuzz(number)
-        if (res != "")
-            return res
-        else
-            return number.toString()
+        return getResult(res, number)
     }
 
-    fun checkFizz(number: Int): String = if (number % 3 == 0) "fizz" else ""
-    fun checkBuzz(number: Int): String = if (number % 5 == 0) "buzz" else ""
+    private fun getResult(res: String, number: Int): String {
+        return if (res != "")
+            res
+        else
+            number.toString()
+    }
+
+    private fun checkFizz(number: Int): String = if (number % 3 == 0) "fizz" else ""
+    private fun checkBuzz(number: Int): String = if (number % 5 == 0) "buzz" else ""
 }
