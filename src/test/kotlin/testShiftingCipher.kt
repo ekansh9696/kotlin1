@@ -82,4 +82,24 @@ class ShiftingCipherTests : StringSpec({
         val obj: Shift = Shift()
         obj.shiftBy("aZxN", 3) shouldBe "dCaQ"
     }
+    "single digit Shift by 1 no loopback"{
+        val obj : Shift= Shift()
+        obj.shiftBy("1",1) shouldBe "2"
+    }
+
+    "multiple digit Shift by 3 no loopback"{
+        val obj:Shift = Shift()
+        obj.shiftBy("643",3) shouldBe "976"
+
+    }
+
+    "single digit Shift by 1  loopback"{
+        val obj : Shift= Shift()
+        obj.shiftBy("9",1) shouldBe "0"
+    }
+
+    "multiple digit Shift by 5 all loopback"{
+        val obj:Shift = Shift()
+        obj.shiftBy("869",5) shouldBe "314"
+    }
 })

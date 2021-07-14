@@ -8,8 +8,12 @@ class Shift {
                 if(character in 'A'..'Z') {
                 if (after_shift > 'Z') after_shift - 26 else after_shift
                 }
-                else {
+                else if(character in 'a'..'z'){
                 if (after_shift > 'z') after_shift - 26 else after_shift
+                }
+                else
+                {
+                    if(after_shift > '9') after_shift - 10 else after_shift
                 }
         }
         return result
