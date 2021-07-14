@@ -120,4 +120,14 @@ class ShiftingCipherTests : StringSpec({
         val obj:Shift = Shift()
         obj.shiftBy("ZzAa964",31) shouldBe "EeFf075"
     }
+
+    "Special characters"{
+        val obj:Shift = Shift()
+        obj.shiftBy(" .!@#$%^&*()",45) shouldBe " .!@#$%^&*()"
+    }
+
+    "Any combination of character"{
+        val obj:Shift = Shift()
+        obj.shiftBy("Hello How Are You? My name is ARnoLD906",14) shouldBe "Vszzc Vck Ofs Mci? Am boas wg OFbcZR340"
+    }
 })

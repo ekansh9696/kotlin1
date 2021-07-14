@@ -3,6 +3,11 @@ class Shift {
         var result=""
         for (character in input)
         {
+            if (character !in 'A'..'Z' && character !in 'a'..'z' && character !in '0'..'9')
+            {
+                result+=character
+                continue
+            }
             val true_shift = if (character in '0'..'9') shift_by % 10 else shift_by %26
             val after_shift = character + true_shift
             result +=
