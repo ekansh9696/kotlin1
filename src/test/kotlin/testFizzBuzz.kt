@@ -27,7 +27,3 @@ class FizzBuzzTests : StringSpec({
         obj.checkFizzBuzz(60) shouldBe "fizzbuzz"
     }
 })
-
-class TestShiftingCipher : StringSpec({
-    
-})
