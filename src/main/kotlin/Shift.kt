@@ -3,7 +3,14 @@ class Shift {
         var result=""
         for (character in input)
         {
-            result+=(character+(shift_by%26))
+            val after_shift = character + (shift_by % 26)
+            result +=
+                if(character in 'A'..'Z') {
+                if (after_shift > 'Z') after_shift - 26 else after_shift
+                }
+                else {
+                if (after_shift > 'z') after_shift - 26 else after_shift
+                }
         }
         return result
     }
