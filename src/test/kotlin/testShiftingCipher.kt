@@ -97,9 +97,27 @@ class ShiftingCipherTests : StringSpec({
         val obj : Shift= Shift()
         obj.shiftBy("9",1) shouldBe "0"
     }
-
+    "single digit Shift by value greater than 26"{
+        val obj:Shift=Shift()
+        obj.shiftBy("0",33) shouldBe "3"
+    }
     "multiple digit Shift by 5 all loopback"{
         val obj:Shift = Shift()
         obj.shiftBy("869",5) shouldBe "314"
+    }
+
+    "complex string without spaces shift by 1"{
+        val obj:Shift = Shift()
+        obj.shiftBy("ZeaLMate924",1) shouldBe "AfbMNbuf035"
+    }
+
+    "complex string without spaces shift by 12"{
+        val obj:Shift = Shift()
+        obj.shiftBy("ZzAa123",12) shouldBe "LlMm345"
+    }
+
+    "complex string without spaces shift by value greater than 26"{
+        val obj:Shift = Shift()
+        obj.shiftBy("ZzAa964",31) shouldBe "EeFf075"
     }
 })
