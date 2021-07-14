@@ -27,9 +27,9 @@ class ShiftingCipherTests : StringSpec({
             obj.shiftBy("Z", 1) shouldBe "A"
 
         }
-        "multiple letters (capital) Shift by 3 all loopback" {
+        "multiple letters (capital) Shift by 29 all loopback" {
         val obj: Shift = Shift()
-        obj.shiftBy("XYZ", 3) shouldBe "ABC"
+        obj.shiftBy("XYZ", 29) shouldBe "ABC"
         }
 
         "multiple letters (capital) Shift by 3 some loopback" {
@@ -69,6 +69,17 @@ class ShiftingCipherTests : StringSpec({
         val obj: Shift = Shift()
         obj.shiftBy("azx", 3) shouldBe "dca"
     }
+    "multiple letters Shift by 5 no loopback" {
+        val obj: Shift = Shift()
+        obj.shiftBy("arNOld", 1) shouldBe "bsOPme"
+    }
+    "multiple letters Shift by 5 all loopback" {
+        val obj: Shift = Shift()
+        obj.shiftBy("XyZ", 3) shouldBe "AbC"
+    }
 
-
+    "multiple letters Shift by 3 some loopback" {
+        val obj: Shift = Shift()
+        obj.shiftBy("aZxN", 3) shouldBe "dCaQ"
+    }
 })
