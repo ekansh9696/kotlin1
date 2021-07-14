@@ -8,21 +8,24 @@ class Shift {
                 result+=character
                 continue
             }
-            val true_shift = if (character in '0'..'9') shift_by % 10 else shift_by %26
-            val after_shift = character + true_shift
-            result +=
-                if(character in 'A'..'Z') {
-                if (after_shift > 'Z') after_shift - 26 else after_shift
-                }
-                else if(character in 'a'..'z'){
-                if (after_shift > 'z') after_shift - 26 else after_shift
-                }
-                else
-                {
-                    if(after_shift > '9') after_shift - 10 else after_shift
-                }
+            result += shifting(character, shift_by)
         }
         return result
+    }
+
+    private fun shifting(character: Char, shift_by: Int): Char {
+
+        val trueShift = if (character in '0'..'9') shift_by % 10 else shift_by % 26
+        val afterShift = character + trueShift
+        return getCharAfterShift(character, afterShift)
+    }
+
+    private fun getCharAfterShift(character: Char, afterShift: Char) = if (character in 'A'..'Z') {
+        if (afterShift > 'Z') afterShift - 26 else afterShift
+    } else if (character in 'a'..'z') {
+        if (afterShift > 'z') afterShift - 26 else afterShift
+    } else {
+        if (afterShift > '9') afterShift - 10 else afterShift
     }
 
 }
