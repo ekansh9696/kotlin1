@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ShiftingCipherTests" tests="27" skipped="0" failures="0" errors="0" timestamp="2021-07-15T06:27:08" hostname="Ekanshs-MacBook-Pro.local" time="0.062">
+<testsuite name="ShiftingCipherTests" tests="27" skipped="0" failures="0" errors="0" timestamp="2021-07-15T06:40:53" hostname="Ekanshs-MacBook-Pro.local" time="0.06">
   <properties/>
-  <testcase name="single letter (capital) Shift by 1 No loopback" classname="ShiftingCipherTests" time="0.015"/>
-  <testcase name="multiple letters (capital) Shift by 1 No loopback" classname="ShiftingCipherTests" time="0.001"/>
+  <testcase name="single letter (capital) Shift by 1 No loopback" classname="ShiftingCipherTests" time="0.016"/>
+  <testcase name="multiple letters (capital) Shift by 1 No loopback" classname="ShiftingCipherTests" time="0.0"/>
   <testcase name="single letter (capital) Shift by 4 No loopback" classname="ShiftingCipherTests" time="0.001"/>
   <testcase name="multiple letters (capital) Shift by 3 No loopback" classname="ShiftingCipherTests" time="0.0"/>
   <testcase name="single letter (capital) Shift by 1 loopback" classname="ShiftingCipherTests" time="0.001"/>
   <testcase name="multiple letters (capital) Shift by 29 all loopback" classname="ShiftingCipherTests" time="0.001"/>
-  <testcase name="multiple letters (capital) Shift by 3 some loopback" classname="ShiftingCipherTests" time="0.001"/>
+  <testcase name="multiple letters (capital) Shift by 3 some loopback" classname="ShiftingCipherTests" time="0.0"/>
   <testcase name="single letter (small) Shift by 1 No loopback" classname="ShiftingCipherTests" time="0.001"/>
   <testcase name="multiple letters (small) Shift by 1 No loopback" classname="ShiftingCipherTests" time="0.001"/>
   <testcase name="single letter (small) Shift by 10 No loopback" classname="ShiftingCipherTests" time="0.0"/>
   <testcase name="multiple letters (small) Shift by 3 No loopback" classname="ShiftingCipherTests" time="0.0"/>
-  <testcase name="single letter (small) Shift by 1 loopback" classname="ShiftingCipherTests" time="0.001"/>
-  <testcase name="multiple letters (small) Shift by 5 all loopback" classname="ShiftingCipherTests" time="0.0"/>
-  <testcase name="multiple letters (small) Shift by 3 some loopback" classname="ShiftingCipherTests" time="0.001"/>
-  <testcase name="multiple letters Shift by 5 no loopback" classname="ShiftingCipherTests" time="0.002"/>
+  <testcase name="single letter (small) Shift by 1 loopback" classname="ShiftingCipherTests" time="0.0"/>
+  <testcase name="multiple letters (small) Shift by 5 all loopback" classname="ShiftingCipherTests" time="0.001"/>
+  <testcase name="multiple letters (small) Shift by 3 some loopback" classname="ShiftingCipherTests" time="0.0"/>
+  <testcase name="multiple letters Shift by 5 no loopback" classname="ShiftingCipherTests" time="0.001"/>
   <testcase name="multiple letters Shift by 5 all loopback" classname="ShiftingCipherTests" time="0.0"/>
   <testcase name="multiple letters Shift by 3 some loopback" classname="ShiftingCipherTests" time="0.001"/>
-  <testcase name="single digit Shift by 1 no loopback" classname="ShiftingCipherTests" time="0.001"/>
-  <testcase name="multiple digit Shift by 3 no loopback" classname="ShiftingCipherTests" time="0.0"/>
-  <testcase name="single digit Shift by 1  loopback" classname="ShiftingCipherTests" time="0.0"/>
+  <testcase name="single digit Shift by 1 no loopback" classname="ShiftingCipherTests" time="0.0"/>
+  <testcase name="multiple digit Shift by 3 no loopback" classname="ShiftingCipherTests" time="0.001"/>
+  <testcase name="single digit Shift by 1  loopback" classname="ShiftingCipherTests" time="0.001"/>
   <testcase name="single digit Shift by value greater than 26" classname="ShiftingCipherTests" time="0.001"/>
   <testcase name="multiple digit Shift by 5 all loopback" classname="ShiftingCipherTests" time="0.0"/>
-  <testcase name="complex string without spaces shift by 1" classname="ShiftingCipherTests" time="0.001"/>
+  <testcase name="complex string without spaces shift by 1" classname="ShiftingCipherTests" time="0.0"/>
   <testcase name="complex string without spaces shift by 12" classname="ShiftingCipherTests" time="0.001"/>
   <testcase name="complex string without spaces shift by value greater than 26" classname="ShiftingCipherTests" time="0.001"/>
   <testcase name="Special characters" classname="ShiftingCipherTests" time="0.001"/>

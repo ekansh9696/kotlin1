@@ -1,13 +1,9 @@
 class Shift {
     fun shiftBy(input: String, shift_by: Int): String {
         var result = ""
-        for (character in input) {
-            if (character !in 'A'..'Z' && character !in 'a'..'z' && character !in '0'..'9') {
-                result += character
-                continue
-            }
-            result += shifting(character, shift_by)
-        }
+        for (character in input)
+            result += if (character !in 'A'..'Z' && character !in 'a'..'z' && character !in '0'..'9') character
+            else shifting(character, shift_by)
         return result
     }
 
