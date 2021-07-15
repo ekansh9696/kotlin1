@@ -1,7 +1,7 @@
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 
-class ShoppingCarTests : StringSpec({
+class ShoppingCartTests : StringSpec({
 
     "GIVEN an empty cart WHEN adding 3 cookies worth 30 rupees THEN the amount payable must be 90 rupees" {
         val items: List<Product> = listOf(Product("cookies", 30.0))
@@ -20,5 +20,17 @@ class ShoppingCarTests : StringSpec({
         val itemWithQuantity: Map<Product, Int> = items.zip(listOf(3, 2)).toMap()
         val user1: ShoppingCart = ShoppingCart(itemWithQuantity)
         user1.calculateAmount() shouldBe 181.0
+    }
+    "GIVEN an empty cart WHEN adding 6 cookies worth 30 rupees AND applying buy one get one free offer THEN the amount payable must be 90 rupees" {
+        val items: List<Product> = listOf(Product("cookies", 30.0, BuyOneGetOne()))
+        val itemWithQuantity: Map<Product, Int> = items.zip(listOf(6)).toMap()
+        val user1: ShoppingCart = ShoppingCart(itemWithQuantity)
+        user1.calculateAmount() shouldBe 90.0
+    }
+    "GIVEN an empty cart WHEN adding 3 soap bars worth 40 rupees AND applying buy one get one free offer THEN the amount payable must be 80 rupees" {
+        val items: List<Product> = listOf(Product("soap bar", 40.0, BuyOneGetOne()))
+        val itemWithQuantity: Map<Product, Int> = items.zip(listOf(3)).toMap()
+        val user1: ShoppingCart = ShoppingCart(itemWithQuantity)
+        user1.calculateAmount() shouldBe 80.0
     }
 })
