@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ShoppingCarTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-07-15T17:52:10" hostname="Ekanshs-MacBook-Pro.local" time="0.023">
+  <properties/>
+  <testcase name="GIVEN an empty cart WHEN adding 3 cookies worth 30 rupees THEN the amount payable must be 90 rupees" classname="ShoppingCarTests" time="0.018"/>
+  <testcase name="GIVEN an empty cart WHEN adding 3 cookies worth 30 rupees AND applying discount of 10 percent on each cookie THEN the amount payable must be 81 rupees" classname="ShoppingCarTests" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

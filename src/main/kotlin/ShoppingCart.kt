@@ -1,11 +1,10 @@
-class ShoppingCart(private var listItems : Map<Product, Int> ) {
+class ShoppingCart(private var listItems: Map<Product, Int>) {
 
     var payableAmount: Double = calculateAmount()
-    fun calculateAmount(): Double
-    {
+    fun calculateAmount(): Double {
         var result = 0.0
         for (item in listItems)
-            result += item.key.mrp * item.value
+            result += item.key.mrp * item.value - item.key.discount.getDiscountAmount(item.key.mrp, item.value)
         return result
     }
 }
