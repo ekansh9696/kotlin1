@@ -3,39 +3,39 @@ import io.kotest.matchers.shouldBe
 
 class ShiftingCipherTests : StringSpec({
 
-        "single letter (capital) Shift by 1 No loopback" {
-            val obj: Shift = Shift()
-            obj.shiftBy("A", 1) shouldBe "B"
+    "single letter (capital) Shift by 1 No loopback" {
+        val obj: Shift = Shift()
+        obj.shiftBy("A", 1) shouldBe "B"
 
-        }
-        "multiple letters (capital) Shift by 1 No loopback" {
-            val obj: Shift = Shift()
-            obj.shiftBy("ABCDE", 1) shouldBe "BCDEF"
-        }
-        "single letter (capital) Shift by 4 No loopback" {
-            val obj: Shift = Shift()
-            obj.shiftBy("F", 4) shouldBe "J"
+    }
+    "multiple letters (capital) Shift by 1 No loopback" {
+        val obj: Shift = Shift()
+        obj.shiftBy("ABCDE", 1) shouldBe "BCDEF"
+    }
+    "single letter (capital) Shift by 4 No loopback" {
+        val obj: Shift = Shift()
+        obj.shiftBy("F", 4) shouldBe "J"
 
-        }
-        "multiple letters (capital) Shift by 3 No loopback" {
-            val obj: Shift = Shift()
-            obj.shiftBy("ABCDE", 3) shouldBe "DEFGH"
-        }
+    }
+    "multiple letters (capital) Shift by 3 No loopback" {
+        val obj: Shift = Shift()
+        obj.shiftBy("ABCDE", 3) shouldBe "DEFGH"
+    }
 
-        "single letter (capital) Shift by 1 loopback" {
-            val obj: Shift = Shift()
-            obj.shiftBy("Z", 1) shouldBe "A"
+    "single letter (capital) Shift by 1 loopback" {
+        val obj: Shift = Shift()
+        obj.shiftBy("Z", 1) shouldBe "A"
 
-        }
-        "multiple letters (capital) Shift by 29 all loopback" {
+    }
+    "multiple letters (capital) Shift by 29 all loopback" {
         val obj: Shift = Shift()
         obj.shiftBy("XYZ", 29) shouldBe "ABC"
-        }
+    }
 
-        "multiple letters (capital) Shift by 3 some loopback" {
-            val obj: Shift = Shift()
-            obj.shiftBy("MPZ", 3) shouldBe "PSC"
-        }
+    "multiple letters (capital) Shift by 3 some loopback" {
+        val obj: Shift = Shift()
+        obj.shiftBy("MPZ", 3) shouldBe "PSC"
+    }
     "single letter (small) Shift by 1 No loopback" {
         val obj: Shift = Shift()
         obj.shiftBy("x", 1) shouldBe "y"
@@ -83,50 +83,50 @@ class ShiftingCipherTests : StringSpec({
         obj.shiftBy("aZxN", 3) shouldBe "dCaQ"
     }
     "single digit Shift by 1 no loopback"{
-        val obj : Shift= Shift()
-        obj.shiftBy("1",1) shouldBe "2"
+        val obj: Shift = Shift()
+        obj.shiftBy("1", 1) shouldBe "2"
     }
 
     "multiple digit Shift by 3 no loopback"{
-        val obj:Shift = Shift()
-        obj.shiftBy("643",3) shouldBe "976"
+        val obj: Shift = Shift()
+        obj.shiftBy("643", 3) shouldBe "976"
 
     }
 
     "single digit Shift by 1  loopback"{
-        val obj : Shift= Shift()
-        obj.shiftBy("9",1) shouldBe "0"
+        val obj: Shift = Shift()
+        obj.shiftBy("9", 1) shouldBe "0"
     }
     "single digit Shift by value greater than 26"{
-        val obj:Shift=Shift()
-        obj.shiftBy("0",33) shouldBe "3"
+        val obj: Shift = Shift()
+        obj.shiftBy("0", 33) shouldBe "3"
     }
     "multiple digit Shift by 5 all loopback"{
-        val obj:Shift = Shift()
-        obj.shiftBy("869",5) shouldBe "314"
+        val obj: Shift = Shift()
+        obj.shiftBy("869", 5) shouldBe "314"
     }
 
     "complex string without spaces shift by 1"{
-        val obj:Shift = Shift()
-        obj.shiftBy("ZeaLMate924",1) shouldBe "AfbMNbuf035"
+        val obj: Shift = Shift()
+        obj.shiftBy("ZeaLMate924", 1) shouldBe "AfbMNbuf035"
     }
 
     "complex string without spaces shift by 12"{
-        val obj:Shift = Shift()
-        obj.shiftBy("ZzAa123",12) shouldBe "LlMm345"
+        val obj: Shift = Shift()
+        obj.shiftBy("ZzAa123", 12) shouldBe "LlMm345"
     }
 
     "complex string without spaces shift by value greater than 26"{
-        val obj:Shift = Shift()
-        obj.shiftBy("ZzAa964",31) shouldBe "EeFf075"
+        val obj: Shift = Shift()
+        obj.shiftBy("ZzAa964", 31) shouldBe "EeFf075"
     }
 
     "Special characters"{
-        val obj:Shift = Shift()
-        obj.shiftBy(" .!@#$%^&*()",45) shouldBe " .!@#$%^&*()"
+        val obj: Shift = Shift()
+        obj.shiftBy(" .!@#$%^&*()", 45) shouldBe " .!@#$%^&*()"
     }
     "Any combination of character large shift"{
-        val obj:Shift = Shift()
-        obj.shiftBy("Hello How Are You? My name is ARnoLD906",14) shouldBe "Vszzc Vck Ofs Mci? Am boas wg OFbcZR340"
+        val obj: Shift = Shift()
+        obj.shiftBy("Hello How Are You? My name is ARnoLD906", 14) shouldBe "Vszzc Vck Ofs Mci? Am boas wg OFbcZR340"
     }
 })

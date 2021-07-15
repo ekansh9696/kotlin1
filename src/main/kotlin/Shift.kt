@@ -1,11 +1,9 @@
 class Shift {
     fun shiftBy(input: String, shift_by: Int): String {
-        var result=""
-        for (character in input)
-        {
-            if (character !in 'A'..'Z' && character !in 'a'..'z' && character !in '0'..'9')
-            {
-                result+=character
+        var result = ""
+        for (character in input) {
+            if (character !in 'A'..'Z' && character !in 'a'..'z' && character !in '0'..'9') {
+                result += character
                 continue
             }
             result += shifting(character, shift_by)
@@ -20,12 +18,11 @@ class Shift {
         return getCharAfterShift(character, afterShift)
     }
 
-    private fun getCharAfterShift(character: Char, afterShift: Char) = if (character in 'A'..'Z') {
-        if (afterShift > 'Z') afterShift - 26 else afterShift
-    } else if (character in 'a'..'z') {
-        if (afterShift > 'z') afterShift - 26 else afterShift
-    } else {
-        if (afterShift > '9') afterShift - 10 else afterShift
-    }
+    private fun getCharAfterShift(character: Char, afterShift: Char) =
+        if (character in 'A'..'Z')
+            if (afterShift > 'Z') afterShift - 26 else afterShift
+        else if (character in 'a'..'z')
+            if (afterShift > 'z') afterShift - 26 else afterShift
+        else if (afterShift > '9') afterShift - 10 else afterShift
 }
 

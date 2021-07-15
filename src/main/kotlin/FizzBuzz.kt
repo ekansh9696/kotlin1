@@ -1,8 +1,6 @@
-
-class FizzBuzz
-{
+class FizzBuzz {
     fun checkFizzBuzz(num: String): String {
-        val number=num.toInt()
+        val number = num.toInt()
         var res = ""
         res += checkFizz(number) + checkBuzz(number)
         return getResult(res, number)
