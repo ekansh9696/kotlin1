@@ -1,7 +1,8 @@
 
 class FizzBuzz
 {
-    fun checkFizzBuzz(number: Int): String {
+    fun checkFizzBuzz(num: String): String {
+        val number=num.toInt()
         var res = ""
         res += checkFizz(number) + checkBuzz(number)
         return getResult(res, number)
@@ -15,5 +16,6 @@ class FizzBuzz
     }
 
     private fun checkFizz(number: Int): String = if (number % 3 == 0) "fizz" else ""
+
     private fun checkBuzz(number: Int): String = if (number % 5 == 0) "buzz" else ""
 }

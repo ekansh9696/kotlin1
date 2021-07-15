@@ -27,5 +27,5 @@ class Shift {
     } else {
         if (afterShift > '9') afterShift - 10 else afterShift
     }
-
 }
+
