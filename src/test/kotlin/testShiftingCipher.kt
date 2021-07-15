@@ -6,7 +6,6 @@ class ShiftingCipherTests : StringSpec({
     "single letter (capital) Shift by 1 No loopback" {
         val obj: Shift = Shift()
         obj.shiftBy("A", 1) shouldBe "B"
-
     }
     "multiple letters (capital) Shift by 1 No loopback" {
         val obj: Shift = Shift()
