@@ -1,4 +1,4 @@
-import `Shopping Cart`.*
+import shoppingCart.*
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 

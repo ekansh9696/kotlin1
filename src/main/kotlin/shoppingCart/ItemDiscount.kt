@@ -1,4 +1,4 @@
-package `Shopping Cart`
+package shoppingCart
 
 interface ItemDiscount {
     fun getDiscountAmount(price: Double, quantity: Int): Double

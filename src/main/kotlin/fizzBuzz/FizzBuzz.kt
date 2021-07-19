@@ -1,4 +1,4 @@
-package FizzBuzz
+package fizzBuzz
 
 class FizzBuzz {
     fun checkFizzBuzz(num: String): String {

@@ -1,4 +1,4 @@
-package `Shopping Cart`
+package shoppingCart
 
 class ShoppingCart(private var listItems: Map<Product, Int>) {
 
@@ -12,7 +12,7 @@ class ShoppingCart(private var listItems: Map<Product, Int>) {
     }
 
     private fun getPayableAmountForEachItem(item: Map.Entry<Product, Int>) =
-        item.key.MRP * item.value - item.key.discount.getDiscountAmount(item.key.MRP, item.value)
+        item.key.price * item.value - item.key.discount.getDiscountAmount(item.key.price, item.value)
 
     private fun checkAndCalculateFivePercent(result: Double) =
         if (result <= 500) result else result - (result * .05)
