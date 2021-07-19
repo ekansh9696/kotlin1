@@ -1,8 +1,13 @@
-import shoppingCart.*
+import problemShoppingCart.*
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 
 class ShoppingCartTests : StringSpec({
+
+    "GIVEN an empty cart THEN the amount payable must be 0 rupees" {
+        val user1: ShoppingCart = ShoppingCart()
+        user1.getPayableAmount() shouldBe 0.0
+    }
 
     "GIVEN an empty cart WHEN adding 3 cookies worth 30 rupees THEN the amount payable must be 90 rupees" {
         val items: List<Product> = listOf(Product("cookies", 30.0))

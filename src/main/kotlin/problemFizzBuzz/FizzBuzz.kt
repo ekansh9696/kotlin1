@@ -1,4 +1,4 @@
-package fizzBuzz
+package problemFizzBuzz
 
 class FizzBuzz {
     fun checkFizzBuzz(num: String): String {

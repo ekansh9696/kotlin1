@@ -1,4 +1,4 @@
-package shiftingCipher
+package problemShiftingCipher
 
 class Shift {
     fun shiftBy(input: String, shift_by: Int): String {
