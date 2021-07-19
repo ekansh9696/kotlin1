@@ -1,3 +1,5 @@
+package FizzBuzz
+
 class FizzBuzz {
     fun checkFizzBuzz(num: String): String {
         val number = num.toInt()

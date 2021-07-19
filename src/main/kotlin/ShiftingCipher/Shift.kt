@@ -1,3 +1,5 @@
+package ShiftingCipher
+
 class Shift {
     fun shiftBy(input: String, shift_by: Int): String {
         var result = ""
@@ -21,4 +23,3 @@ class Shift {
             if (afterShift > 'z') afterShift - 26 else afterShift
         else if (afterShift > '9') afterShift - 10 else afterShift
 }
-

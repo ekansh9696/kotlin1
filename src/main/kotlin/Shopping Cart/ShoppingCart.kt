@@ -1,3 +1,5 @@
+package `Shopping Cart`
+
 class ShoppingCart(private var listItems: Map<Product, Int>) {
 
     private val payableAmount: Double = calculateAmount()
