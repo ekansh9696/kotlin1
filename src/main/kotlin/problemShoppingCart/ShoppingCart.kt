@@ -5,12 +5,12 @@ class ShoppingCart {
     private var payableAmount: Double = 0.0
 
     fun getPayableAmount(): Double {
-        payableAmount= calculateAmount()
+        payableAmount = calculateAmount()
         return payableAmount
     }
 
     private fun calculateAmount(): Double {
-        var result=0.0
+        var result = 0.0
         if (listItems.isNotEmpty())
             for (item in listItems)
                 result += getPayableAmountForEachItem(item)
@@ -31,13 +31,13 @@ class ShoppingCart {
         if (listItems.isEmpty()) listItems = mutableMapOf(buyingItem) else ItemPresentOrNew(buyingItem)
     }
 
-   private fun ItemPresentOrNew(buyingItem: Pair<Product, Int>) {
-        val allProducts =  listItems.keys
+    private fun ItemPresentOrNew(buyingItem: Pair<Product, Int>) {
+        val allProducts = listItems.keys
         if (buyingItem.first in allProducts) {
             val updatedQuantity: Int = listItems[buyingItem.first]!! + buyingItem.second
             listItems[buyingItem.first] = updatedQuantity
         } else
-            listItems[buyingItem.first]= buyingItem.second
+            listItems[buyingItem.first] = buyingItem.second
     }
 
 }
