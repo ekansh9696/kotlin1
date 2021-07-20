@@ -11,16 +11,16 @@ class ShoppingCartTests : StringSpec({
     }
 
     "equality test for objects of class Product"{
-        val item=Product("toothpaste",30.0)
-        val item2=Product("toothpaste",30.0)
-        val result  = item == item2
+        val item = Product("toothpaste", 30.0)
+        val item2 = Product("toothpaste", 30.0)
+        val result = item == item2
         result shouldBe true
     }
 
     "inequality test for objects of class Product"{
-        val item=Product("toothpaste",30.0)
-        val item2=Product("toothpaste",30.0,DiscountTenPercent())
-        val result  = item == item2
+        val item = Product("toothpaste", 30.0)
+        val item2 = Product("toothpaste", 30.0, DiscountTenPercent())
+        val result = item == item2
         result shouldBe false
     }
 
@@ -51,51 +51,51 @@ class ShoppingCartTests : StringSpec({
     "GIVEN an empty cart WHEN adding 6 cookies worth 30 rupees AND applying buy one get one free offer THEN the amount payable must be 90 rupees" {
         val user1: ShoppingCart = ShoppingCart()
         val cookies = Product("cookies", 30.0, BuyOneGetOne())
-        val cookieQuantity=Pair(cookies,6)
+        val cookieQuantity = Pair(cookies, 6)
         user1.addItemToCart(cookieQuantity)
         user1.getPayableAmount() shouldBe 90.0
     }
     "GIVEN an empty cart WHEN adding 3 soap bars worth 40 rupees AND applying buy one get one free offer THEN the amount payable must be 80 rupees" {
         val user1: ShoppingCart = ShoppingCart()
         val soap = Product("soap bar", 40.0, BuyOneGetOne())
-        val soapWithQuantity=Pair(soap,3)
+        val soapWithQuantity = Pair(soap, 3)
         user1.addItemToCart(soapWithQuantity)
         user1.getPayableAmount() shouldBe 80.0
     }
     "GIVEN an empty cart WHEN adding 2 soap bars worth 50 rupees AND applying discount of 30 percent to the next soap bought after each purchase THEN the amount payable must be 85 rupees" {
         val user1: ShoppingCart = ShoppingCart()
         val soap = Product("soap bar", 50.0, ConsecutiveDiscountThirtyPercent())
-        val soapWithQuantity=Pair(soap,2)
+        val soapWithQuantity = Pair(soap, 2)
         user1.addItemToCart(soapWithQuantity)
         user1.getPayableAmount() shouldBe 85.0
     }
     "GIVEN an empty cart WHEN adding 5 soap bars worth 50 rupees AND applying discount of 30 percent to the next soap bought after each purchase THEN the amount payable must be 220 rupees" {
-         val user1: ShoppingCart = ShoppingCart()
+        val user1: ShoppingCart = ShoppingCart()
         val soap = Product("soap bar", 50.0, ConsecutiveDiscountThirtyPercent())
-        val soapWithQuantity=Pair(soap,5)
+        val soapWithQuantity = Pair(soap, 5)
         user1.addItemToCart(soapWithQuantity)
         user1.getPayableAmount() shouldBe 220.0
     }
-   "GIVEN an empty cart WHEN the total amount in cart is more than 500 rupees (Adding 5 soap bars of 60 rupees each, applying ten percent discount on each and 10 cookies worth 50 rupees each )THEN the amount payable must be 731.5 rupees" {
+    "GIVEN an empty cart WHEN the total amount in cart is more than 500 rupees (Adding 5 soap bars of 60 rupees each, applying ten percent discount on each and 10 cookies worth 50 rupees each )THEN the amount payable must be 731.5 rupees" {
         val user1: ShoppingCart = ShoppingCart()
         val soap = Product("soap bar", 60.0, DiscountTenPercent())
-        val soapWithQuantity=Pair(soap,5)
+        val soapWithQuantity = Pair(soap, 5)
         user1.addItemToCart(soapWithQuantity)
         val cookies = Product("cookies", 50.0)
-        val cookieWithQuantity=Pair(cookies,10)
+        val cookieWithQuantity = Pair(cookies, 10)
         user1.addItemToCart(cookieWithQuantity)
         user1.getPayableAmount() shouldBe 731.5
-   }
+    }
     "GIVEN an empty cart WHEN we add 3 soap bars worth 60 rupees on buy1 get1 , add 2 cookies worth 10 rupees , again add 1 soap bar worth 60 rupees on buy1 get1 THEN the amount payable must be 140 rupees" {
         val user1: ShoppingCart = ShoppingCart()
         val item1 = Product("soap bar", 60.0, BuyOneGetOne())
-        val item1WithQuantity=Pair(item1,3)
+        val item1WithQuantity = Pair(item1, 3)
         user1.addItemToCart(item1WithQuantity)
         val item2 = Product("cookies", 10.0)
-        val item2WithQuantity=Pair(item2,2)
+        val item2WithQuantity = Pair(item2, 2)
         user1.addItemToCart(item2WithQuantity)
         val item3 = Product("soap bar", 60.0, BuyOneGetOne())
-        val item3WithQuantity=Pair(item3,1)
+        val item3WithQuantity = Pair(item3, 1)
         user1.addItemToCart(item3WithQuantity)
         user1.getPayableAmount() shouldBe 140.0
     }
@@ -109,7 +109,6 @@ class ShoppingCartTests : StringSpec({
         }
         exception.message shouldBe "Invalid Product Price Entered"
     }
-
 
 
 })
