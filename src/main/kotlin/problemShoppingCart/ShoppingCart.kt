@@ -1,7 +1,7 @@
 package problemShoppingCart
 
 class ShoppingCart {
-    private var listItems: MutableMap<Product, Int> = mutableMapOf()
+    private var listItems: Map<Product, Int> = mapOf()
     private var payableAmount: Double = 0.0
 
     fun getPayableAmount(): Double {
@@ -28,17 +28,19 @@ class ShoppingCart {
 
 
     fun addItemToCart(buyingItem: Pair<Product, Int>) {
-        if (listItems.isEmpty()) listItems = mutableMapOf(buyingItem) else ItemPresentOrNew(buyingItem)
+        if (listItems.isEmpty()) listItems = mapOf(buyingItem) else itemPresentOrNew(buyingItem)
     }
 
-    private fun ItemPresentOrNew(buyingItem: Pair<Product, Int>) {
-        val allProducts = listItems.keys
-        if (buyingItem.first in allProducts) {
+    private fun itemPresentOrNew(buyingItem: Pair<Product, Int>) {
+
+        if (listItems.containsKey(buyingItem.first)) {
             val updatedQuantity: Int = listItems[buyingItem.first]!! + buyingItem.second
-            listItems[buyingItem.first] = updatedQuantity
+            listItems = listItems.minus(buyingItem.first)
+            listItems = listItems.plus(Pair(buyingItem.first, updatedQuantity))
         } else
-            listItems[buyingItem.first] = buyingItem.second
-    }
+            listItems = listItems.plus(buyingItem)
 
+    }
 }
+
 

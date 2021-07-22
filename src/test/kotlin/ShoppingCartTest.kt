@@ -109,6 +109,4 @@ class ShoppingCartTests : StringSpec({
         }
         exception.message shouldBe "Invalid Product Price Entered"
     }
-
-
 })
