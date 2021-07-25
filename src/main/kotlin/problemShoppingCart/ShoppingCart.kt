@@ -3,28 +3,40 @@ package problemShoppingCart
 class ShoppingCart {
     private val listItems: MutableMap<Product, Int> = mutableMapOf()
 
-    fun getPayableAmount(): Double {
+    fun getPayableAmount(): Double = if (listItems.isNotEmpty()) getBill() else 0.0
 
-        return if (listItems.isNotEmpty())
-            FivePercent().getDiscountAmount(listItems.keys.sumOf {
-                it.price * listItems[it]!! - it.discount.getDiscountAmount(
-                    it.price,
-                    listItems[it]!!
-                )
-            }, 1)
-        else
-            0.0
+    fun addItemToCart(item: Product, quantity: Int) = if (listItems.isEmpty()) listItems[item] = quantity else itemPresentOrNew(item, quantity)
 
+
+    fun removeItemFromCart(item: Product, quantity: Int) {
+        checkExceptions(item, quantity)
+        listItems[item] = if (listItems.containsKey(item)) listItems[item]!! - quantity else quantity
     }
 
-    fun addItemToCart(item: Product, quantity: Int) {
-        if (listItems.isEmpty()) listItems[item] = quantity else itemPresentOrNew(item, quantity)
-    }
+
+    private fun getBill() = FivePercent().getDiscountAmount(listItems.keys.sumOf {
+        it.price * listItems[it]!! - it.discount.getDiscountAmount(
+            it.price,
+            listItems[it]!!
+        )
+    }, 1)
 
     private fun itemPresentOrNew(item: Product, quantity: Int) {
 
-        listItems[item] = if (listItems.containsKey(item)) listItems[item]!! + quantity  else quantity
+        listItems[item] = if (listItems.containsKey(item)) listItems[item]!! + quantity else quantity
     }
+
+    private fun checkExceptions(item: Product, quantity: Int) {
+        if (listItems.isEmpty())
+            throw error("Cart is empty")
+        if (quantity <= 0)
+            throw error("0 or negative quantity amount")
+        if (item !in listItems)
+            throw error("No such product in cart")
+        if (listItems[item]!! < quantity)
+            throw error("Not enough quantity in cart to remove")
+    }
+
 }
 
 
