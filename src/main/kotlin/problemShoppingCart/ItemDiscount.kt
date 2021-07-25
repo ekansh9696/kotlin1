@@ -23,3 +23,9 @@ data class ConsecutiveDiscountThirtyPercent(val discountApplied: Boolean = true)
         if (quantity % 2 == 0) price * quantity / 2 * .3 else price * (quantity - 1) / 2 * .3
 }
 
+data class FivePercent(val discountApplied: Boolean = true) : ItemDiscount {
+    override fun getDiscountAmount(price: Double, quantity: Int): Double =
+        if (price <= 500) price else price - (price * .05)
+
+
+}
