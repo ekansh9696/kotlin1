@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ShoppingCartTests" tests="13" skipped="0" failures="0" errors="0" timestamp="2021-07-25T14:39:27" hostname="Ekanshs-MacBook-Pro.local" time="0.049">
+<testsuite name="ShoppingCartTests" tests="13" skipped="0" failures="0" errors="0" timestamp="2021-07-25T14:46:40" hostname="Ekanshs-MacBook-Pro.local" time="0.05">
   <properties/>
-  <testcase name="GIVEN an empty cart THEN the amount payable must be 0 rupees" classname="ShoppingCartTests" time="0.026"/>
-  <testcase name="equality test for objects of class Product" classname="ShoppingCartTests" time="0.001"/>
+  <testcase name="GIVEN an empty cart THEN the amount payable must be 0 rupees" classname="ShoppingCartTests" time="0.019"/>
+  <testcase name="equality test for objects of class Product" classname="ShoppingCartTests" time="0.003"/>
   <testcase name="inequality test for objects of class Product" classname="ShoppingCartTests" time="0.001"/>
-  <testcase name="GIVEN an empty cart WHEN adding 3 cookies worth 30 rupees THEN the amount payable must be 90 rupees" classname="ShoppingCartTests" time="0.0"/>
+  <testcase name="GIVEN an empty cart WHEN adding 3 cookies worth 30 rupees THEN the amount payable must be 90 rupees" classname="ShoppingCartTests" time="0.001"/>
   <testcase name="GIVEN an empty cart WHEN adding 3 cookies worth 30 rupees AND applying discount of 10 percent on each cookie THEN the amount payable must be 81 rupees" classname="ShoppingCartTests" time="0.001"/>
   <testcase name="GIVEN an empty cart WHEN adding 3 cookies worth 30 rupees AND adding 2 noodles worth 50 rupees AND applying discount of 10 percent on each cookie THEN the amount payable must be 181 rupees" classname="ShoppingCartTests" time="0.001"/>
   <testcase name="GIVEN an empty cart WHEN adding 6 cookies worth 30 rupees AND applying buy one get one free offer THEN the amount payable must be 90 rupees" classname="ShoppingCartTests" time="0.001"/>
-  <testcase name="GIVEN an empty cart WHEN adding 3 soap bars worth 40 rupees AND applying buy one get one free offer THEN the amount payable must be 80 rupees" classname="ShoppingCartTests" time="0.0"/>
+  <testcase name="GIVEN an empty cart WHEN adding 3 soap bars worth 40 rupees AND applying buy one get one free offer THEN the amount payable must be 80 rupees" classname="ShoppingCartTests" time="0.002"/>
   <testcase name="GIVEN an empty cart WHEN adding 2 soap bars worth 50 rupees AND applying discount of 30 percent to the next soap bought after each purchase THEN the amount payable must be 85 rupees" classname="ShoppingCartTests" time="0.001"/>
   <testcase name="GIVEN an empty cart WHEN adding 5 soap bars worth 50 rupees AND applying discount of 30 percent to the next soap bought after each purchase THEN the amount payable must be 220 rupees" classname="ShoppingCartTests" time="0.001"/>
-  <testcase name="GIVEN an empty cart WHEN the total amount in cart is more than 500 rupees (Adding 5 soap bars of 60 rupees each, applying ten percent discount on each and 10 cookies worth 50 rupees each )THEN the amount payable must be 731.5 rupees" classname="ShoppingCartTests" time="0.001"/>
-  <testcase name="GIVEN an empty cart WHEN we add 3 soap bars worth 60 rupees on buy1 get1 , add 2 cookies worth 10 rupees , again add 1 soap bar worth 60 rupees on buy1 get1 THEN the amount payable must be 140 rupees" classname="ShoppingCartTests" time="0.0"/>
+  <testcase name="GIVEN an empty cart WHEN the total amount in cart is more than 500 rupees (Adding 5 soap bars of 60 rupees each, applying ten percent discount on each and 10 cookies worth 50 rupees each )THEN the amount payable must be 731.5 rupees" classname="ShoppingCartTests" time="0.0"/>
+  <testcase name="GIVEN an empty cart WHEN we add 3 soap bars worth 60 rupees on buy1 get1 , add 2 cookies worth 10 rupees , again add 1 soap bar worth 60 rupees on buy1 get1 THEN the amount payable must be 140 rupees" classname="ShoppingCartTests" time="0.001"/>
   <testcase name="GIVEN an empty cart WHEN adding 5 soap bars worth -50 rupees AND applying discount of 30 percent to the next soap bought after each purchase THEN an exception should be thrown as the product price is negative" classname="ShoppingCartTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

@@ -17,17 +17,13 @@ class ShoppingCart {
 
     }
 
-    fun addItemToCart(item : Product, quantity : Int) {
-        if (listItems.isEmpty()) listItems[item] = quantity else itemPresentOrNew(item,quantity)
+    fun addItemToCart(item: Product, quantity: Int) {
+        if (listItems.isEmpty()) listItems[item] = quantity else itemPresentOrNew(item, quantity)
     }
 
-    private fun itemPresentOrNew(item : Product,quantity : Int) {
+    private fun itemPresentOrNew(item: Product, quantity: Int) {
 
-        if (listItems.containsKey(item)) {
-            val updatedQuantity: Int = listItems[item]!! + quantity
-            listItems[item] = updatedQuantity
-        } else
-            listItems[item] = quantity
+        listItems[item] = if (listItems.containsKey(item)) listItems[item]!! + quantity  else quantity
     }
 }
 
