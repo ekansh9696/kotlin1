@@ -19,7 +19,7 @@ class ShoppingCartTests : StringSpec({
 
     "equality test for objects of class Product with same name and price but different discount types"{
         val item = Product("toothpaste", 30.0)
-        val item2 = Product("toothpaste", 30.0,ConsecutiveDiscountThirtyPercent())
+        val item2 = Product("toothpaste", 30.0, ConsecutiveDiscountThirtyPercent())
         val result = item == item2
         result shouldBe false
     }

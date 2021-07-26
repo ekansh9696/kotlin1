@@ -16,7 +16,7 @@ class ShoppingCart {
 
 
     private fun getBill() =
-        FivePercent().discountAmount(listItems.keys.sumOf {it.amountAfterDiscount(listItems[it]!!) }, 1)
+        FivePercent().discountAmount(listItems.keys.sumOf { it.amountAfterDiscount(listItems[it]!!) }, 1)
 
 
     private fun itemPresentOrNew(item: Product, quantity: Int) {
