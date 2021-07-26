@@ -6,7 +6,7 @@ import io.kotest.matchers.*
 class ShoppingCartTests : StringSpec({
 
     "GIVEN an empty cart THEN the amount payable must be 0 rupees" {
-        val user1: ShoppingCart = ShoppingCart()
+        val user1 = ShoppingCart()
         user1.getPayableAmount() shouldBe 0.0
     }
 
@@ -17,7 +17,7 @@ class ShoppingCartTests : StringSpec({
         result shouldBe true
     }
 
-    "equality test for objects of class Product with same name and price but different discount types"{
+    "inequality test for objects of class Product with same name and price but different discount types"{
         val item = Product("toothpaste", 30.0)
         val item2 = Product("toothpaste", 30.0, ConsecutiveDiscountThirtyPercent())
         val result = item == item2
@@ -32,15 +32,15 @@ class ShoppingCartTests : StringSpec({
     }
 
     "GIVEN an empty cart WHEN adding 3 cookies worth 30 rupees THEN the amount payable must be 90 rupees" {
-        val user1: ShoppingCart = ShoppingCart()
-        val cookies: Product = Product("cookies", 30.0)
+        val user1 = ShoppingCart()
+        val cookies = Product("cookies", 30.0)
         val cookieQuantity = 3
         user1.addItemToCart(cookies, cookieQuantity)
         user1.getPayableAmount() shouldBe 90.0
     }
 
     "GIVEN an empty cart WHEN adding 3 cookies worth 30 rupees AND applying discount of 10 percent on each cookie THEN the amount payable must be 81 rupees" {
-        val user1: ShoppingCart = ShoppingCart()
+        val user1 = ShoppingCart()
         val cookies = Product("cookies", 30.0, DiscountTenPercent())
         val cookieQuantity = 3
         user1.addItemToCart(cookies, cookieQuantity)
@@ -48,7 +48,7 @@ class ShoppingCartTests : StringSpec({
     }
 
     "GIVEN an empty cart WHEN adding 3 cookies worth 30 rupees AND adding 2 noodles worth 50 rupees AND applying discount of 10 percent on each cookie THEN the amount payable must be 181 rupees" {
-        val user1: ShoppingCart = ShoppingCart()
+        val user1= ShoppingCart()
         val cookies = Product("cookies", 30.0, DiscountTenPercent())
         val cookieQuantity = 3
         user1.addItemToCart(cookies, cookieQuantity)
@@ -59,7 +59,7 @@ class ShoppingCartTests : StringSpec({
     }
 
     "GIVEN an empty cart WHEN adding 6 cookies worth 30 rupees AND applying buy one get one free offer THEN the amount payable must be 90 rupees" {
-        val user1: ShoppingCart = ShoppingCart()
+        val user1 = ShoppingCart()
         val cookies = Product("cookies", 30.0, BuyOneGetOne())
         val cookieQuantity = 6
         user1.addItemToCart(cookies, cookieQuantity)
@@ -67,7 +67,7 @@ class ShoppingCartTests : StringSpec({
     }
 
     "GIVEN an empty cart WHEN adding 3 soap bars worth 40 rupees AND applying buy one get one free offer THEN the amount payable must be 80 rupees" {
-        val user1: ShoppingCart = ShoppingCart()
+        val user1 = ShoppingCart()
         val soap = Product("soap bar", 40.0, BuyOneGetOne())
         val soapQuantity = 3
         user1.addItemToCart(soap, soapQuantity)
@@ -75,7 +75,7 @@ class ShoppingCartTests : StringSpec({
     }
 
     "GIVEN an empty cart WHEN adding 2 soap bars worth 50 rupees AND applying discount of 30 percent to the next soap bought after each purchase THEN the amount payable must be 85 rupees" {
-        val user1: ShoppingCart = ShoppingCart()
+        val user1 = ShoppingCart()
         val soap = Product("soap bar", 50.0, ConsecutiveDiscountThirtyPercent())
         val soapQuantity = 2
         user1.addItemToCart(soap, soapQuantity)
@@ -83,7 +83,7 @@ class ShoppingCartTests : StringSpec({
     }
 
     "GIVEN an empty cart WHEN adding 5 soap bars worth 50 rupees AND applying discount of 30 percent to the next soap bought after each purchase THEN the amount payable must be 220 rupees" {
-        val user1: ShoppingCart = ShoppingCart()
+        val user1 = ShoppingCart()
         val soap = Product("soap bar", 50.0, ConsecutiveDiscountThirtyPercent())
         val soapQuantity = 5
         user1.addItemToCart(soap, soapQuantity)
@@ -91,7 +91,7 @@ class ShoppingCartTests : StringSpec({
     }
 
     "GIVEN an empty cart WHEN the total amount in cart is more than 500 rupees (Adding 5 soap bars of 60 rupees each, applying ten percent discount on each and 10 cookies worth 50 rupees each )THEN the amount payable must be 731.5 rupees" {
-        val user1: ShoppingCart = ShoppingCart()
+        val user1= ShoppingCart()
         val soap = Product("soap bar", 60.0, DiscountTenPercent())
         val soapQuantity = 5
         user1.addItemToCart(soap, soapQuantity)
@@ -102,7 +102,7 @@ class ShoppingCartTests : StringSpec({
     }
 
     "GIVEN an empty cart WHEN we add 3 soap bars worth 60 rupees on buy1 get1 , add 2 cookies worth 10 rupees , again add 1 soap bar worth 60 rupees on buy1 get1 THEN the amount payable must be 140 rupees" {
-        val user1: ShoppingCart = ShoppingCart()
+        val user1 = ShoppingCart()
         val item1 = Product("soap bar", 60.0, BuyOneGetOne())
         val item1Quantity = 3
         user1.addItemToCart(item1, item1Quantity)
@@ -118,7 +118,7 @@ class ShoppingCartTests : StringSpec({
     "GIVEN an empty cart WHEN adding 5 soap bars worth -50 rupees AND applying discount of 30 percent to the next soap bought after each purchase THEN an exception should be thrown as the product price is negative" {
 
         val exception = shouldThrow<IllegalStateException> {
-            val user1: ShoppingCart = ShoppingCart()
+            val user1 = ShoppingCart()
             val item = Product("soap bar", -50.0, ConsecutiveDiscountThirtyPercent())
             val itemQuantity = 5
             user1.addItemToCart(item, itemQuantity)
@@ -127,7 +127,7 @@ class ShoppingCartTests : StringSpec({
     }
 
     "Given an empty cart When adding 5 soap bars worth rupees 50 and removing 2 soap bars Then amount payable must be 150 rupees"{
-        val user1: ShoppingCart = ShoppingCart()
+        val user1 = ShoppingCart()
         val item1 = Product("soap bar", 50.0)
         val item1Quantity = 5
         user1.addItemToCart(item1, item1Quantity)
@@ -137,7 +137,7 @@ class ShoppingCartTests : StringSpec({
 
     "GIVEN an empty cart THEN removing an item MUST throw an Exception" {
         val exception = shouldThrow<IllegalStateException> {
-            val user1: ShoppingCart = ShoppingCart()
+            val user1= ShoppingCart()
             val item1 = Product("soap bar", 50.0)
             user1.removeItemFromCart(item1, 1)
         }
@@ -146,7 +146,7 @@ class ShoppingCartTests : StringSpec({
 
     "GIVEN a certain cart THEN removing an item with negative or 0 quantity MUST throw an Exception" {
         val exception = shouldThrow<IllegalStateException> {
-            val user1: ShoppingCart = ShoppingCart()
+            val user1= ShoppingCart()
             val item1 = Product("soap bar", 50.0)
             user1.addItemToCart(item1, 5)
             user1.removeItemFromCart(item1, -2)
@@ -156,7 +156,7 @@ class ShoppingCartTests : StringSpec({
 
     "GIVEN a certain cart THEN removing an item not in cart MUST throw an Exception" {
         val exception = shouldThrow<IllegalStateException> {
-            val user1: ShoppingCart = ShoppingCart()
+            val user1 = ShoppingCart()
             val item1 = Product("soap bar", 50.0)
             val item2 = Product("cookies", 50.0)
             user1.addItemToCart(item1, 5)
@@ -167,7 +167,7 @@ class ShoppingCartTests : StringSpec({
 
     "GIVEN a certain cart THEN removing quantity of items more than that in cart MUST throw an Exception" {
         val exception = shouldThrow<IllegalStateException> {
-            val user1: ShoppingCart = ShoppingCart()
+            val user1= ShoppingCart()
             val item1 = Product("soap bar", 50.0)
             user1.addItemToCart(item1, 5)
             user1.removeItemFromCart(item1, 10)
