@@ -5,7 +5,8 @@ class ShoppingCart {
 
     fun getPayableAmount(): Double = if (listItems.isNotEmpty()) getBill() else 0.0
 
-    fun addItemToCart(item: Product, quantity: Int) = if (listItems.isEmpty()) listItems[item] = quantity else itemPresentOrNew(item, quantity)
+    fun addItemToCart(item: Product, quantity: Int) =
+        if (listItems.isEmpty()) listItems[item] = quantity else itemPresentOrNew(item, quantity)
 
 
     fun removeItemFromCart(item: Product, quantity: Int) {
@@ -14,12 +15,9 @@ class ShoppingCart {
     }
 
 
-    private fun getBill() = FivePercent().getDiscountAmount(listItems.keys.sumOf {
-        it.price * listItems[it]!! - it.discount.getDiscountAmount(
-            it.price,
-            listItems[it]!!
-        )
-    }, 1)
+    private fun getBill() =
+        FivePercent().getDiscountAmount(listItems.keys.sumOf { it.amountAfterDiscount(listItems[it]!!) }, 1)
+
 
     private fun itemPresentOrNew(item: Product, quantity: Int) {
 
