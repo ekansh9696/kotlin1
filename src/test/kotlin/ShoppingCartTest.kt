@@ -48,7 +48,7 @@ class ShoppingCartTests : StringSpec({
     }
 
     "GIVEN an empty cart WHEN adding 3 cookies worth 30 rupees AND adding 2 noodles worth 50 rupees AND applying discount of 10 percent on each cookie THEN the amount payable must be 181 rupees" {
-        val user1= ShoppingCart()
+        val user1 = ShoppingCart()
         val cookies = Product("cookies", 30.0, DiscountTenPercent())
         val cookieQuantity = 3
         user1.addItemToCart(cookies, cookieQuantity)
@@ -91,7 +91,7 @@ class ShoppingCartTests : StringSpec({
     }
 
     "GIVEN an empty cart WHEN the total amount in cart is more than 500 rupees (Adding 5 soap bars of 60 rupees each, applying ten percent discount on each and 10 cookies worth 50 rupees each )THEN the amount payable must be 731.5 rupees" {
-        val user1= ShoppingCart()
+        val user1 = ShoppingCart()
         val soap = Product("soap bar", 60.0, DiscountTenPercent())
         val soapQuantity = 5
         user1.addItemToCart(soap, soapQuantity)
@@ -137,7 +137,7 @@ class ShoppingCartTests : StringSpec({
 
     "GIVEN an empty cart THEN removing an item MUST throw an Exception" {
         val exception = shouldThrow<IllegalStateException> {
-            val user1= ShoppingCart()
+            val user1 = ShoppingCart()
             val item1 = Product("soap bar", 50.0)
             user1.removeItemFromCart(item1, 1)
         }
@@ -146,7 +146,7 @@ class ShoppingCartTests : StringSpec({
 
     "GIVEN a certain cart THEN removing an item with negative or 0 quantity MUST throw an Exception" {
         val exception = shouldThrow<IllegalStateException> {
-            val user1= ShoppingCart()
+            val user1 = ShoppingCart()
             val item1 = Product("soap bar", 50.0)
             user1.addItemToCart(item1, 5)
             user1.removeItemFromCart(item1, -2)
@@ -167,7 +167,7 @@ class ShoppingCartTests : StringSpec({
 
     "GIVEN a certain cart THEN removing quantity of items more than that in cart MUST throw an Exception" {
         val exception = shouldThrow<IllegalStateException> {
-            val user1= ShoppingCart()
+            val user1 = ShoppingCart()
             val item1 = Product("soap bar", 50.0)
             user1.addItemToCart(item1, 5)
             user1.removeItemFromCart(item1, 10)

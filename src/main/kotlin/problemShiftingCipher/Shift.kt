@@ -22,4 +22,5 @@ class Shift {
         else if (character in 'a'..'z')
             if (afterShift > 'z') afterShift - 26 else afterShift
         else if (afterShift > '9') afterShift - 10 else afterShift
+
 }
