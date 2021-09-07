@@ -12,7 +12,6 @@ class DiscountTenPercent : ItemDiscount {
     override val discountAmount: (Double, Int) -> Double = { price: Double, quantity: Int -> price * .1 * quantity }
 }
 
-
 class BuyOneGetOne : ItemDiscount {
     override val discountAmount: (Double, Int) -> Double =
         { price: Double, quantity: Int -> if (quantity % 2 == 0) price * quantity / 2 else price * (quantity - 1) / 2 }
